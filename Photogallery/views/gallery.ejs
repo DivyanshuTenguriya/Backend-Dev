@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gallery Images</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:10px">
+<% image.forEach(ele => { %>
+    <img src="/images/<%= ele %>" width="200" />
+<% }) %>
+</div>
+<div>
+    <% for(let i=1; i<=totalPage; i++){ %>
+        <a href="/gallery?page=<%= i %>"><%= i %></a>   
+    <% } %>
+</div>
+
+</body>
+</html>
