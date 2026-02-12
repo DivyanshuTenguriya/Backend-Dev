@@ -7,7 +7,31 @@
 </head>
 <body>
     <h1>user page</h1>
-    <h1><%= userData.name %></h1>
-    <h1><%= userData.age %></h1>
-</body>
+
+    
+
+    <form action="/api/user" method="POST">
+        <input type="text" name="name" placeholder="name" required>
+        <br><br>
+        <input type="number" name="age" placeholder="age" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    <ul>
+        <% userData.forEach((ele)=>{ %>
+        <li>
+            <%= ele.name %> <%= ele.age %> 
+            <form action="http://localhost:3000/api/user/<%= ele.id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+            </form>
+            <form>
+            <button> <a href="/editpage/<%= ele.id %>">Edit</a></button>
+            </form>
+        <li/>
+        <% }) %>
+    </ul>
+    <img src="https://ragdoll-archers.game-files.crazygames.com/ragdoll-archers/41/logo.jpeg">
+</body> 
 </html>

@@ -1,21 +1,21 @@
 import express from "express";
 const app = express();
+import methodOverride from "method-override";
+
+app.use(methodOverride("_method"));
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
+import userRoute from "./Router/userRoute.js";
+import pageRoute from "./Router/pages.js";
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use("/", pageRoute);
+app.use("/api", userRoute);
+app.use(express.urlencoded({extended:true}));
 
-app.get("/user", (req, res) => {
-  let userData = {
-    name: "Amit",
-    age: 23,
-  };
-  res.render("user", { userData });
-});
 
+
+//get fruit list
 app.get("/list", (req, res) => {
   let arr = ["Apple", "Mango", "Orange"];
   res.render("list", { arr });
