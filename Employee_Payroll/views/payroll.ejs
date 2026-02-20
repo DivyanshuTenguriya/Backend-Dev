@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payroll</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef1f5;
+      padding: 30px;
+    }
+
+    .card {
+      width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+    a {
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Salary Slip</h2>
+
+  <p><strong>Name:</strong> <%= emp.name %></p>
+  <p><strong>Department:</strong> <%= emp.dept %></p>
+  <p><strong>Basic Salary:</strong> ₹ <%= emp.basic_sal %></p>
+  <p><strong>Net Salary:</strong> ₹ <%= netSalary %></p>
+
+  <a href="/employees">← Back to Employees</a>
+</div>
+
+</body>
+</html>

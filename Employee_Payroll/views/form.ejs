@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Employee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    form {
+      width: 420px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #2ecc71;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #27ae60;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #3498db;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Add Employee</h2>
+
+<form method="POST" action="/employees">
+
+  <label>Name</label>
+  <input type="text" name="name" required>
+
+  <label>Gender</label>
+  <input type="radio" name="gender" value="Male" required> Male
+  <input type="radio" name="gender" value="Female"> Female
+
+  <label>Department</label>
+  <input type="text" name="department" required>
+
+  <label>Basic Salary</label>
+  <select name="basicSalary" required>
+    <option value="">Select</option>
+    <option value="10000">10000</option>
+    <option value="20000">20000</option>
+    <option value="30000">30000</option>
+  </select>
+
+  <label>Joining Date</label>
+  <input type="date" name="joiningDate" required>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<a href="/employees" class="back-link">Back to List</a>
+
+</body>
+</html>
